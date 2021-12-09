@@ -1,0 +1,958 @@
+/*EXTERNAL CASCADING STYLE SHEETS
+стиль вынесен в отдельный файл, 
+чтобы править всё в одном месте*/
+
+<style type="text/css">
+
+	/*по приоритетам inline,internal 
+	(in head section), external*/
+
+
+	/*слева штука называется selector
+	ctrl /- comment
+	ctrl shift / - многостр коммент
+	alt . -закрыть незакрытый тег
+	alt shift w - оберуть тегом выделенный текст
+	ctrl k, ctrl space - непонятная метка
+	ctrl k, ctrl w - удалить непонятную метку
+	ctrl ] - убрать отступ
+	ctrl [ - отступ
+	ctrl shift v - вставить с отступом
+	ctrl shift d - дублировать строку
+	*/
+
+	/* КАК НУЖНО ССЫЛАТЬСЯ
+	background: url("../img/fox.png"); .. значит, 
+	что нужно выйти из папки на шаг назад и там 
+	искать путь
+	 */
+
+
+	h1{ /*тут может быть всякая фигня, потому что он
+	 ее не воспринимает ПОЧЕМУ-ТО*/
+
+	 	/*rgb (0,0,1)*/
+		/*rgba- alpha transprentsy (0,0,1, .5) станет темнее*/
+		background-color: 0,0,1,.5;
+		/* important дает приоритет и 
+		не даст изменить настройки*/
+
+	}
+
+	h1{
+		font-family: Arial !important;
+
+		/*лучше не исп названия,ибо они 
+		отличаются в разных браузерах*/
+		color: purple;	
+		
+	    text-shadow: 4px -2px 0px #1dd8d5;
+	    background-color: #716bc4;
+	}
+
+	h2{
+		/*даем браузеру вырианты с первого приоритета*/
+		font-family: Courier, Impact, Arial;			
+	    text-shadow: 4px -2px 0px #aca8df;
+		line-height: 200%;
+	}
+
+	h3{
+		/*делает любой текст капсом*/
+		font-variant: small-caps;
+		text-transform: uppercase;
+		line-height: 50%
+	}
+
+	h4{
+
+	}
+	
+
+
+	h5{
+
+		/*clear для осособления от 
+		остальных элементов со всех сторон*/		
+		clear both;
+
+	}
+
+	h6{
+		/*float двигает до конца влево, вправо*/
+
+		float right: 
+		font-family: mySpecialFont;
+	}
+
+	/*можно несколько селекторов*/
+	abbr, span {
+	    font-style: italic;
+	    font-weight: 100;
+	}
+
+	time { background: aqua; }
+
+	/*собственный шрифт*/
+	@font-face{
+		font-family: mySpecialFont;
+		src: url('New.ttf');
+	}
+
+	/* эксперименты с параметром display
+	block - берет необх. высоту
+	inline - и ширину, и высоту 
+	none - не отобразит вообще
+	table, table-cell
+	*/
+
+	body{
+		display: table;
+	}
+
+	
+	span{
+		
+	
+	}
+
+	/*overflow visible - видно, даже если больше отведенного места
+	overflow hidden - обрежется
+	overflow scroll - будет прокрутка всегда
+	overflow auto - появится скролл, если надо*/
+
+	/*link, visited, hover (при наведении мыши)
+	focus-с клавы, active- во время нажатия ахаха только после 	hover
+	button is better sometimes*/
+
+	a{
+		display:inline-block;
+		font-weight: bold;
+		background: #1dd8d5;
+    	color: #000000;
+		text-align: left;
+	
+		padding: 1px;
+		text-decoration: none;/*underline*/
+		margin: 0 auto;
+		margin-top: :10px;
+	}
+
+ 	/*TRANSITIONS pseudo classes
+ 	user action: hover, active, focus
+ 	link: link, visited
+ 	forms (interfaces): enabled, checked, disabled
+
+ 	Types
+ 	first-child, only-child, first-of-type, nth-child(5) 
+	first-letter, first-line, before, after */
+
+	a:hover{
+		background: #b3b3b3;
+		color: #000000;
+	}
+	/*если чел tab исп, чтобы перемещаться*/
+	a:focus{
+		background: #b3b3b3;
+		color: #0006cc;
+	}
+
+	a:active{
+		border: 3px solid #000000;
+	}
+
+	/*border style, width, color 
+	dotted, dashed, solid, double, 
+	groove, ridge, inset, outset, hidden
+	width thin, medium, large
+	color transparent
+
+	border-width: сверху по бокам (п л) снизу;
+	*/
+
+
+	ul{
+		/*если не найдет картинку-будет square*/
+		list-style-image: square url('icon.gif');
+
+	}
+
+	ol{
+		list-style-type: hebrew;/*upper-roman*/
+
+	}
+
+	/*margin spase outside the box
+	padding space inside the box
+	mar+bor+pad+width= act width
+	margin: 0 auto- horizontally center elem
+
+	box-sizing=padding+border ему пофигу на margin 
+
+	measurement- absolute= px,cm..fluid=%, vw viewport width, vh viewport height
+	rem size of root elem em*/
+
+
+
+	/*блоковые элементы не будт стоять рядом
+	для отображения рядом, надо inline-block*/
+	div{
+		display: block;
+		/*border: solid 1px #cc00aa;*/
+		border-width: 3px 1px;/*сбоку*/
+		margin: 0 auto;
+
+		/*width: 48%;/*<50, ибо это размер без border*/*/
+		
+	}
+
+	/*visibility
+	visible, hidden оставит место пустым, collapse(for table elements)*/
+
+
+	/*p.main- class='main', header img.special*/
+
+	p{
+		font-size: 1.3rem;
+		/*left, right, center, justify*/
+	    text-align: justify;
+	   
+	}
+
+	/* * применяет стиль ко всем элементам
+	match exactly:
+	a[href^='http://google']-beginning
+	img[src$='.png']-ending
+	a[href*='instagram']-any part in link
+	pseudo-classes,elements
+	*/
+
+	a[href*='instagram']{
+		background: #ffff00;
+	}
+	nav{
+		display: inline-block;
+		width: 45%;
+		font-family: Arial, Times, serif;
+		margin: 0 auto;
+		margin-top: center;
+
+		float:left;
+		margin-right: 1%;
+		clear: right;
+	}
+
+	/*nav a- for all links inside nav, descendant всё а внутри
+  nav>a- for no p between, child 1 уровень иерархии. 
+  только непоср. его дети внутри, не внуки
+  h1+ol-same level and follow each other, adjacent
+  h2 тильда p то же, что + вроде
+
+  #media={}-по #id уникально
+  .fas fa-address-card fa-5x{}-для .class*/
+
+    .arrow {
+		background: #2db34a;
+		color: #fff;
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 12px;
+		position: relative;
+		text-decoration: none;
+	}
+	.arrow:before,
+	.arrow:after {
+		content: "";
+		height: 0;
+		position: absolute;
+		width: 0;
+	}
+	.arrow:before {
+	  border-bottom: 15px solid #2db34a;
+	  border-left: 15px solid transparent;
+	  border-top: 15px solid #2db34a;
+	  left: -15px;
+	}
+	.arrow:after {
+	  border-bottom: 15px solid transparent;
+	  border-left: 15px solid #2db34a;
+	  border-top: 15px solid transparent;
+	  right: -15px;
+	}
+	.arrow:hover {
+	  background: #ff7b29;
+	}
+	.arrow:hover:before {
+	  border-bottom: 15px solid #ff7b29;
+	  border-top: 15px solid #ff7b29;
+	}
+	.arrow:hover:after {
+	  border-left: 15px solid #ff7b29;
+	}
+
+	/*back-color and background разница в том, 
+	что второе мультифунционально, может включать 
+	все параметры сразу*/
+
+	section{
+		
+		display:inline-block;
+		width: 40%;/*так мы расположили их рядом*/
+		float:left;
+		margin-right: 10%;
+		padding-right: 2px 2px;
+
+
+		/*повышаем доступность браузеров*/
+		-webkit-column-count: 3; /*Android, Chrome, iOS, Safari*/
+		-moz-column-count: 3; /*Firefox*/
+		-o-column-count: 3;/*opera*/
+		-ms-column-count:3;/*internet explorer*/
+		column-count: 3;
+
+		-webkit-column-gap: 15px;
+		-moz-column-gap: 15px;
+		-o-column-gap: 15px;
+		column-gap: 15px;
+
+		-webkit-border-radius: 25px;
+		-moz-border-radius: 15px;
+		-o-border-radius: 15px;
+		border-radius: 15px;
+
+		background: -webkit-linear-gradient(#ceec06 0%,#00bcd4 100%);
+		background: -moz-linear-gradient(#ceec06 0%,#00bcd4 100%);
+		background: -o-linear-gradient(#ceec06 0%,#00bcd4 100%);
+		background: linear-gradient(#ceec06 0%,#00bcd4 100%);
+	}
+		
+
+		#transition1{
+		color: #000000;
+		background: #2db34a;
+		line-height: 200px;
+		text-align: center;
+		width: 250px;
+		height: 200px;
+		border-radius: 6px;
+
+		transition-property: color, width, background, border-radius;
+		transition-duration: .5s;
+		transition-timing-function: linear;
+		transition-delay: .5s;
+	}
+
+	/*работает когда наводишь*/
+	#transition1:hover{
+		color: #FFFFFF;
+		width: 350px;
+		background: #2d31b3;
+		border-radius: 50%;
+	}
+
+	/*когда кликаешь*/
+	#transition1:active{
+		color: #000000;
+		width: 150 px;
+		background: #00ddb3
+	}
+
+	#transition2{
+		transition: background .2s linear-gradient, border-radius 1s ease-in 1s;
+	}
+
+	/*tranform 
+
+	2D!
+	:translate(x,y) move x pixxels to the left/right and y pixels up/down;
+	:rorate(30deg);
+	:scale(width. height)-scale(2,3) в 2 раза шире и в 3 раза выше;
+	:skew(x-angle, y-angle);
+	:matrix() все вместе 2D;
+
+	3D!
+	:rorateX,Y,Z;3D(x,y,z)
+	*/
+
+	/* div tabindex='1'  для изменения порядка табов	*/
+
+
+	/*чет нифига не вертится
+	opacity это как прозачность 1 стандарт*/
+	.animate{
+		background: #92b901;
+		transition: transform 1s, opacity 0.4;
+		border-radius: 5px
+		transition-duration: 1s,1s,1s,1s,1s,1s;
+		transition-property: width,height,transform;
+
+	}
+
+	.animate:hover{
+		transform: -webkit-rotate(360deg);
+		opacity: 1;
+		background: #1ec7e6;
+		width: 110px;
+		height: 67px;
+
+	}
+
+	/*Positioning
+	static, relative (to itself),absolute (ignores everything)
+	,fixed (relative to the browser window for nav bar ex)
+	top 10,right,bottom,left
+
+	z-index  property is used to determine the stacking 
+	order of elements that are placed on top of each other*/
+
+	/*для земли и ракеты*/
+
+	.container{
+	    width: 300px;
+	    height:300px;
+	    margin: 0 auto;
+	    position:relative;
+	    overflow:hidden;
+	    border: none; 
+
+
+	}
+
+	.planet{
+	    position:absolute;
+	    top:0;
+	    left:0;
+	    width:100%;
+	    height:100%;
+	    background:url(https://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/planet.png) no-repeat center center;
+	}
+
+	.rocket{
+	    position:absolute;
+	    top:0;
+	    left:0;
+	    width:100%;
+	    height:100%;
+	    background:url(https://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/rocket.png) no-repeat 50px center;
+
+	    /* Chrome still requires the -webkit- prefix */
+	    -webkit-animation:orbit 2s linear infinite;
+	    animation:orbit 2s linear infinite;
+
+	    transition:background-position 0.8s;
+	}
+
+	.container:hover .rocket{
+	    background-position:80px center;
+	}
+
+	/* Define the keyframes of the animation */
+
+	@-webkit-keyframes orbit {
+	    from {
+	        -webkit-transform:rotate(0deg);}
+	    to {
+	        -webkit-transform:rotate(360deg);
+	    }
+	}
+
+	@keyframes orbit {
+	    from {
+	        transform:rotate(0deg);
+
+	        /* I am including the -webkit-transform properties, because
+	           Chrome might start supporting keyframe without prefix in the future,
+	           but we can't be certain whether it will support prefix-free transform
+	           at the same time */
+
+	        -webkit-transform:rotate(0deg);}
+	    to {
+	        transform:rotate(360deg);
+	        -webkit-transform:rotate(360deg);
+	    }
+	}
+
+
+	/*красивый курсивный фон*/
+	.font{
+    /* Using the custom font we've included in the HTML tab: */
+    font-family: Satisfy, cursive !important ;
+    font-weight:normal;
+    font-size:24px;
+    padding-top: 60px;
+	}
+
+
+	/*для кнопочек с меняющимся текстом*/
+
+	.buttons_change_text{
+
+	    /* Set a counter named cnt to 0 */
+	    counter-reset: cnt;
+
+	    position:relative;
+	    text-align:center;
+	    padding:20px 0;
+	    width:420px;
+	    height: 160px;
+	    margin: 0 auto;
+	}
+
+	/* You can style pseudo elements and give them content,
+	   as if they were real elements on the page */
+
+	.buttons_change_text::before{
+	    display: block;
+	    content:'Hover over these items:';
+	    font-size:18px;
+	    font-weight:bold;
+	    text-align:center;
+	    padding:15px;
+	}
+
+	.buttons_change_text span{
+	    display:inline-block;
+	    padding:2px 6px;
+	    background-color:#78CCD2;
+	    color:#186C72;
+	    border-radius:4px;
+	    margin:3px;
+	    cursor:default;
+	}
+
+	/* Create a counter with a pseudo element */
+
+	.buttons_change_text span::after{
+
+	    /* Every time this rule is executed, the 
+	       counter value is increased by 1 */
+	    counter-increment: cnt;
+
+	    /* Add the counter value as part of the content */
+	    content:" #" counter(cnt);
+
+	    display:inline-block;
+	    padding:4px;
+	}
+
+	/* Pseudo elements can even access attributes of their parent element */
+
+	.buttons_change_text span::before{
+	    position:absolute;
+	    bottom:0;
+	    left:0;
+	    width:100%;
+	    content:attr(data-title);
+	    color:#666;
+
+	    opacity:0;
+
+	    /* Animate the transitions */
+	    -webkit-transition:opacity 0.4s;
+	    transition:opacity 0.4s;
+	}
+
+	.buttons_change_text span:hover::before{
+	    opacity:1;
+	}
+
+	/*для меняющегося фона ракеты*/
+
+	.space{
+
+	    /* Pass a comma separated list of backgrounds: */
+	    background:url('https://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/rocket_big.png') no-repeat center 70px, url('https://demo.tutorialzine.com/2013/10/css3-features-you-can-finally-use/assets/img/space.jpg') no-repeat bottom center;
+
+	    width:200px;
+	    height:200px;
+	    margin: 0 auto;
+
+	    border-radius:3px;
+
+	    /* Animate the positions of both of the backgrounds */
+	    transition:background-position 1s;
+	}
+
+	.space:hover{
+	    /* The same goes for properties like background-position and repeat */
+	    background-position:35% 20px, top right;
+	}
+
+
+	/*для простого расположения колонок*/
+	.place_columns{
+	    width: 500px;
+	    margin: 0 auto;
+	}
+
+	/* Creating columns is as simple as this: */
+
+	.place_columns p{
+	    -moz-columns:3;
+	    -webkit-columns:3;
+	    columns:3;
+	}
+
+
+	/*Календарь*/
+
+	/*Set the table color, border, and spacing...*/
+	table.cal{
+	    color:#06425C;
+	    border-spacing: 0;
+	    border: 3px solid black;
+	    -webkit-border-radius: 25px 25px 0 0;
+	    /*только снизу закруглим*/
+	    border-radius: 0 0 25px 25px;
+	    position: relative;
+	    margin: 0 auto; 
+
+	}
+	/*Alternate colors between even and odd weeks*/
+	tr:nth-child(odd) {
+	    background: #f3e5f5;
+	}
+	tr:nth-child(even) {
+	    background: #fff176;
+	}
+
+	/*To curve the bottom, we need to curve the
+	row and the element.  And each element needs to 
+	curve a different corner.*/
+	tr:last-child{
+	    -webkit-border-radius: 25px 25px 0 0;
+	    border-radius: 0 0 25px 25px;   
+	}
+	tr:last-child>td:first-child {
+	    -webkit-border-radius: 0 0 0 25px;
+	    border-radius: 0 0 0 25px;  
+	}
+
+	tr:last-child>td:last-child{
+	    -webkit-border-radius: 0 0 25px 0;
+	    border-radius: 0 0 25px 0;  
+	}
+
+	/*Format the caption
+	Use border-radius for just some corners*/
+	.cal caption{
+	    text-transform: uppercase;
+	    background-color: #8e24aa;
+	    color:#ffffff;
+	    font-size: 150%;
+	    -webkit-border-radius: 25px 25px 0 0;
+	    border-radius: 25px 25px 0 0;
+	}
+	/*Format common heading and element attributes*/
+	.cal th, .cal td{
+	    margin: 2px;
+	    padding-bottom: 2px;
+	}
+
+	/*Format the table headings*/
+	th{
+	    text-align: center;
+	    background: #FFFFFF;
+	}
+
+	/*Set the size and alignment for elements*/
+	.cal td{
+	    width:75px;
+	    height:75px;
+	    vertical-align:top;
+
+	}
+
+	/*Format any holidays*/
+	.holiday{
+	    margin:0;
+	    padding:0;
+	    background-color: #51A39D;
+	}
+
+	/*Use a background image*/
+	.old{
+	    padding:0;
+	    margin: 0;
+	    background-color: #51A39D;
+	    color:rgba(0,0,0,.25);
+		background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/holiday.png") no-repeat;
+		border-spacing: 0;
+		/*This is the code used in the example*/
+		/*  background: url("../imgs/holiday.png") no-repeat;*/  
+	}
+	/*By default, hide the appointments*/
+	.cal span{
+	    display: block;
+	    text-align: center;
+	    color: #800000;
+	    visibility: hidden;
+	}
+	/*Show the appointments when the date is clicked on*/
+	.cal td:active>span{
+	    visibility:visible;
+	}
+
+	/*Вертикальная навигация*/
+	#vertical_navigation nav{
+		box-sizing:border-box;
+		border: 1px solid #06425C;
+		color:#06425C;
+		background-color:#716bc4;
+		display: inline-block;
+		width: 20%;
+		min-width: 125px;
+		margin-right:15px;
+		height:400px;
+		overflow: auto;
+}
+
+	#vertical_navigation nav a{
+		display:block;
+		line-height: 45px;/*ценрировать ссылки посередине кнопки*/
+		height:45px;
+		color: #FFFFFF;
+		background-color:#311B92;;
+		text-decoration: none;
+		
+		/*надо бы вставить кртиночку слева от кнопки, но как-то не выходит*/
+
+
+		background: url('../img/лис.png') no-repeat width 95%, height:95%;
+		padding-left: 35%;
+		margin: 15px 5px 15px 5px;
+	}
+
+
+	/*он должен использовать последний селектор, но добавляет 
+	все неиспользованные знавчения из другого селекта, 
+	пришлось их прописать, пробы перекрыть*/
+	#vertical_navigation section {
+		display: inline-block;
+		width:70%;
+		height:60vh; /* viewpoint height доля экрана вместо */
+		overflow: auto;
+		-webkit-column-count:1;
+		margin: 0 auto;
+		background: #eeeeee;
+		float: none;
+
+	}
+
+	/*off-page headings если кликнуть таб, 
+	появится кнопка перейти к основному контенту
+	сразу же, не пролистывая все баннеры*/
+
+	.offpage{
+		position: absolute;
+		left: -1000px;
+	}
+
+
+	/*Горизонтальная навигация*/
+
+	#horizontal_navigation nav{
+		box-sizing:border-box;
+		border: 1px solid #06425C;
+		color:#06425C;
+		background-color:#FFFFFF;
+		overflow: auto;
+		padding-left:20px;
+		width: 95%;
+
+	}
+
+	#horizontal_navigation nav a{
+		box-sizing:border-box;
+		display:inline-block;
+		height:60px;
+		color: #FFFFFF;
+		background-color:#716bc4;
+		text-decoration: none;
+		margin:1% 5% 1% 0;
+		padding:1% 5%;
+		border-radius: 25px;
+
+	}
+	#horizontal_navigation .current{
+		background-color:#800000;
+	}
+
+	#horizontal_navigation nav a:hover{
+		color:#000000;
+		border-radius: 0;
+
+	}
+
+	#horizontal_navigation section {
+	display: inline-block;
+	width:95%;
+	/*height:60vh;  viewpoint height доля экрана вместо */
+	overflow: auto;
+	-webkit-column-count:1;
+	margin: 0 auto;
+	background: #eeeeee;
+	float: none;
+
+	}
+
+
+	#drop_down_navigation{
+	  margin: 0;
+	  padding: 0;
+	  background: #ccc;
+	}
+
+	#drop_down_navigation nav{
+		width:100%;
+
+	}
+
+	  
+
+	#drop_down_navigation nav ul {
+	  list-style: none;
+	  background-color: #444;
+	  text-align: center;
+	  padding: 0;
+	  margin: 0;
+
+
+	}
+
+
+
+	#drop_down_navigation nav li {
+	    width: 20%;
+	    border-right: 3px solid yellow;
+	    height: 50px;
+	    line-height: 50px;
+	    font-size: 140%;
+	    display: inline-block;
+	    margin-right: -4px;
+	  }
+
+	  /*чтобы красиво выглядело, уберем границы справа*/
+
+	#drop_down_navigation nav li:last-child{
+		    border-right: none;
+	}
+
+	#drop_down_navigation nav li li{
+		    border-right: none;
+	}
+
+	#drop_down_navigation nav a {
+	  text-decoration: none;
+	  color: #fff;
+	  display: block;
+	  padding-left: 15px;
+	  transition: .5s background-color;
+	}
+
+	#drop_down_navigation nav a:hover {
+	  background-color: #005f5f;
+	}
+
+	#drop_down_navigation nav a.active {
+	  background-color: #aaa;
+	  color: #444;
+	  cursor: default;
+	}
+
+	/* Sub Menus */
+	#drop_down_navigation nav li li {
+	  font-size: .8em;
+	}
+
+	#drop_down_navigation nav > ul > li {
+	   text-align: center;
+	}
+
+	#drop_down_navigation nav > ul > li > a {
+	    padding-left: 0;
+	}
+
+	/* Sub Menus */
+	#drop_down_navigation nav li ul {
+	    position: absolute;
+	    display: none; /*по дефолу не будет отображаться*/
+	    width: inherit;
+	}
+	/*когда наводишь на корень, дисплей меняется на 
+	блок, то есть будт виден*/
+	#drop_down_navigation nav li:hover ul {
+	   display: block;
+	}
+
+	#drop_down_navigation nav li ul li {
+	   display: block;
+	}
+
+	#drop_down_navigation section {
+		display: inline-block;
+		width:100%;
+		/*height:60vh;  viewpoint height доля экрана вместо */
+		overflow: auto;
+		-webkit-column-count:1;
+		margin: 1px auto;
+		padding: 1px 1px 1px 1px;
+		background: #eeeeee;
+		float: none;
+		border-radius: inherit;
+
+	}
+
+	.close_paragraph{
+		display: none;
+	}
+	.open_paragraph{
+		display: block;
+	}
+	.button_paragraph{
+		width: 150px;
+		background-color: #00ccee;
+	}
+
+
+	#image{
+	    line-height:220px;
+		width: 191px;
+	    height: 220px;
+		border:5px solid black;
+		margin:0 auto;
+	    background-color: #8e68ff;
+	    background-image: url('');
+	    background-repeat: no-repeat;
+	    color:#FFFFFF;
+	    text-align: center;
+	    background-size: 100%;
+	    margin-bottom:25px;
+	    font-size: 150%;
+	}
+	}
+	.preview{
+		display: inline-block;
+		line-height:20px;
+		width: 19px;
+	    height: 20px;
+		margin-left:17%;
+    	border: 10px solid black;
+	}
+
+
+
+	footer{
+		display: block;
+	}  
+
+
+
+
+}
+
+</style>
+/*последний (если >1) стиль для правила
+ будет использоваться компуктером*/
+

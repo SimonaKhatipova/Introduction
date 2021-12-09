@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<title>precoldes'</title>
+	<link rel="icon" type="image/png" href ="img/лис.png" />
+	<!--Ссылка на иконки-->
+	<link  href='https://use.fontawesome.com/releases/v5.8.2/css/all.css' integrity='sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay' rel='stylesheet' crossorigin='anonymous'/>
+	<!--тут начинается CSS по красоте-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src = "js/java.js"></script>
+
+	<!---<style src="css/style.css"></style>-->
+
+	<!-- КАК НУЖНО ССЫЛАТЬСЯ 
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src= "js/JavaFunctions.js"></script>
+	<img src = img/Picture.jpg"/>
+	 -->
+
+
+	<!--userful pages
+
+		https://validator.w3.org/  проверка кода HTML
+
+		https://www.w3.org/WAI/tutorials/images/decision-tree/ ALT text images
+
+		https://fontawesome.ru/examples/ иконки
+
+		https://commons.wikimedia.org/wiki/Commons:Upload Загрузка медиа
+
+		http://wave.webaim.org/ Accessibility+colors check
+
+		https://www.funkify.org/simulators/?v=f003c44deab6 vision check
+
+		https://byet.host/ Free hosting
+
+		https://www.favicon.by/ на вкладке иконка
+
+		https://learn.shayhowe.com/html-css/building-your-first-web-page/ конспекты
+
+		https://caniuse.com/ проверка селекторов на поддкержку в браузере
+
+
+
+		-->
+</head>
+
+	<body onload= "message('LOAD')",  onresize="message('RESIZE')"> 
+
+
+		<!--вау тут начем JS -->
+		<!-- find the external file "java.js" -->
+
+		
+		<script>
+		//alert("Hello World");
+		</script>
+		<noscript>
+		Ypur brobwser doesn't support or has disabled JavaScript</noscript>
+		
+		<!-- Хранение заголовков -->
+		<header>
+			<h1 >Hi dear</h1>
+
+
+
+			<h5 style='color: #17e2d8;
+    		text-shadow: 1px -2px 13px black;
+		    box-shadow: -2px 4px 14px 4px black;
+		    background-color: #1fa6a8;' >вот и вот</h5>
+		</header>
+
+
+		<div >
+			<button onclick= "printFruits()">Print</button>
+			<button onclick="myFunction()">Add ur favorite!</button>
+			<p id = "fruits"></p>
+		</div>
+
+
+
+		<div id=JavaScript>
+
+			<h2> JavaScript Events - Responding to Events</h2>
+			<p onclick="message('CLICK')">Click here to see the results</p>
+			<p>Click to the paragraph above to trigger an <em>onclick</em> event. Reload page to see an onload event</p>
+			<p id="output"></p><br>
+
+			<h2>Date functions</h2>
+			<p id="demo">This is a paragraph</p>
+			<button type="button" onclick="displayDate()"> Display Date</button>
+			<h2 id = "test"> Tester</h2>
+			<p> What happens if u have two elements with id = "test"?</p><br>
+
+			<h2>Modify the DOM</h2>
+			<button onclick= "document.getElementById('stuff').innerHTML = 'Clicked LEFT';">LEFT</button>
+			<button onclick= "document.getElementById('stuff').innerHTML = 'Clicked RIGHT';">RIGTH</button>
+			<p id="stuff">This will change.</p>
+
+			<h2>Change the Style</h2>
+			<button class="button_paragraph" type="button" onclick= "openMe()">OPEN</button>
+			<button class="button_paragraph" onclick= "closeMe()">CLOSE</button>
+			<p id="change_the_style">эта инфа открывается и закрывается по кнопкам</p><br>
+
+			<img src = "https://commons.wikimedia.org/wiki/File:14.12.20_Whitworth_and_Platt_Fields_Parks_54_(50719908877).jpg#/media/File:14.12.20_Whitworth_and_Platt_Fields_Parks_54_(50719908877).jpg" alt="night sky" onclick="console.log(this.alt)">
+			<p onclick = "console.log(this.innerHTML)"> Hi There, checking out on a div</p> 
+			<!-- this.innerHTML выведет текст внутри дива -->
+
+			<hr>
+			<img src ="https://upload.wikimedia.org/wikipedia/commons/0/0b/12_con_gi%C3%A1p_-_M%C3%A8o.png" alt="MEOW" id="cat" onclick="displayId(this)">
+			<p onclick ="displayId(this)" id="ID-abzats-cat">кошка из гита</p><br>
+
+			<h2>Устроим галлерею</h2>
+
+			<!-- фотка с методами -->
+			<img class ="preview" alt="вторая фоточка" src="" onmouseover= "showProperties(this)" onmouseleave = "document.getElementById('message').innerHTML='Наведи на картинку';">
+
+
+			<div id = "image">
+				Hover over an image below to display here.
+			</div>
+			
+
+			<!-- на этой будем пробовать функции -->
+
+			<img class ="preview" alt="первая фоточка" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG" onmouseover= "upDate(this)" onmouseleave = "unDo()">
+			<img class ="preview" alt="вторая фоточка" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg" onmouseover= "upDate(this)" onmouseleave = "unDo()">
+			<img class ="preview" alt="третья фоточка" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg"  onmouseover= "upDate(this)" onmouseleave = "unDo()"><br>
+			
+		</div>	
+
+
+
+		<div id= 'media'>
+			<h2> Media files</h2>
+			<!--медиаданные-->
+			<figure>
+				<!--можно использовать только ширину, высота настроится авто 500px -->
+				<!-- или ширина 50% от ширины браузера-->
+				<img src="img/surf.jpg" width = "50%" alt = "Image of surf">
+
+				<figcaption>Amazing surfer doing the trick in the ocean</figcaption>
+			</figure>
+				<br>	
+
+				<!--Используем картинку из Font Awersome-->
+				<i class="fas fa-address-card fa-5x"></i><br>
+				<i class="fas fa-space-shuttle fa-5x"></i>
+				<br>
+				<!--похоже на кастомизацию изображения твиттера, которое не работает!-->
+				<span class="fa-stack fa-lg">
+	 				<i class="fa fa-square-o fa-stack-2x"></i>
+				    <i class="fa fa-twitter fa-stack-1x"></i>
+				</span>
+				твиттер в квадрате ага стопудова он так и отобразилсяы<br>
+				<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+				<span class="sr-only">Загрузка...</span>
+			
+		</div>
+
+		<div id= 'video'>
+			<h2> Videos</h2>
+			<!--autoplay после ширины ест много трафика, луше controls-->
+
+			<!--controls loop==autoplay-->
+			<video src= "https://www.youtube.com/embed/Ak4DXUacnck" width="400" controls='' >Your browser does nit support the <code> viseo</code> element. </video>
+
+			<br>
+
+			<!--так предлагает вставить сам ютуб-->
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/Ak4DXUacnck" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br>
+
+			<!--если использовать #t-15:35 это обрежет музон-->
+			<audio src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Clap_and_snare_loop_%28Carrai_Pass%29.wav' controls>Непонятная музычка с сайта</audio>
+		</div>
+
+
+		<div id = 'links'>
+			<h2> Links</h2>
+
+			<!--хранение ссылок внутри сайта navigation unordered list-->
+			<nav>
+				<ul>
+					<li><a href = 'page2.html'> переход хода</a></li> <br>
+					<!--нельзя испоьзовать ссылки на определенный диск на своем локал компе типа Е:page, если другой путь указывать папку-->
+					<li><a href ='Owerview.html'> Страница побочная</a></li><br>
+					<li><a href = '#history'> история какая-то</a></li><br>
+					<li><a href = 'https://www.wikiwand.com/ru/Лисица'><img src = 'img/лис.png' width=150px alt = ' Вот тут уже интересно'/></a></li><br>
+					<li><a href="https://www.instagram.com/_monica__96/?hl=ru" class='current'>Instagram</a></li><br>
+
+				</ul>
+			</nav>	
+			<nav>
+
+				<ol>
+
+					<li><a href="mailto:someone@example.com">Send email</a></li><br>
+					<li><button onclick="document.location='default.asp'">HTML Tutorial</button></li> <br>
+					<li><a href="#top">Top</a></li><br>
+					<li><a href="#bottom">Bottom</a></li> <br>
+
+					<li><a href="#media">Take me to the opening paragraph.</a></li><br>
+					
+				</ol>
+			</nav>	
+		</div>
+
+
+
+		
+		
+
+			<!--табличка
+			th-table headings, tr-rows, td-data
+			rowspan - растянутость ячейки вниз
+			colspan- растянутость по столбам вбок-->
+		<table border="1">
+			<tr><th>Name</th><th>2nd name</th><th>birth year</th></tr>
+			<tr><td >Simona</td><td rowspan="3">Khatipov</td><td>1999</td></tr>
+			<tr><td >Irek</td><td>1957</td></tr>
+			<tr><td>Karina</td><td>1985</td></tr>
+		</table>
+		<!--horizontal rule пустая линия разделения блоков-->	
+		<hr>
+
+		<br>
+		<!--показывать источник ссылку на автора цитаты-->
+		"Главное не только правильно, но и быстро"<blockquote>Папа</blockquote>
+
+		<!--адрес особо не форматируется отдельно, но помогает браузеру в поиске потом-->
+		<address>Address Perm, Russia, MilkyWay Galaxy</address>
+	 
+		
+
+		<main>
+			<h1> Заголовок H1 </h1>
+			<h2> Заголовок H2</h2>
+			<h3> Заголовок H3</h3>
+			<h4> Заголовок H4</h4>
+			<h5> Заголовок H5</h5>
+			<h6> Заголовок H6</h6>
+
+			<p></p>
+
+			<span>Span A</span>
+			<span>Span B</span>
+			<span>Span C</span>
+			<hr>
+
+			<div id='transition1'>Div A</div>
+			<div id='transition2'>Div B</div>
+			<div class= 'animate'>Div C</div>
+			<hr>
+
+			<p>Paragraph A</p>
+			<p>Paragraph B</p>
+			<p>Paragraph C</p>
+			<hr>
+
+
+
+
+			<!--раскрывающаяся инфа  по заголовку из деталей-->
+			<details>
+				раскрывающийся список через summary
+				<summary>так раскроется по этому заголовку
+				</summary>
+			</details>
+			<hr> <!--линия горзонта-->
+			<span></span><br>
+
+			A reference  to my page <cite> https://vk.com/simonakhatipova</cite> <br>
+
+			<abbr title="new york police department">NYPD</abbr> <br>
+
+			Meet me at <time>2020-08-01 09:00</time> on the corner of 5th ave <br>
+
+			 <p><time>1957-10-04</time> запущен первый искусственный спутник Земли.</p>
+   
+
+			<p>Вот немного кода тебе <code> x**2 for i in list if x&lt;1</code></p> 
+			<!--формулы математические subscripts superscripts-->
+			<p>(x+y)<sup>3</sup> <br>
+			H <sub>2</sub>O </p>
+
+			<button>Нажми сюда</button><br>
+			<!--типа результатов теста в шкале вау -->
+			<meter min="0" max="100" value="50">50%</meter><br>
+			<meter min="0" max="100" value="67.7">67.7%</meter><br>
+			<meter min="0" max="100" value="33">33%</meter><br>
+
+			<p class="fancy box">
+			вот это богически всегда хотела </p><br><progress value="3.75" max="5">progress</progress><br></p> 
+			
+
+			
+			<!--web page inside of the web page-->
+			<!--у вк стоит бан, остальные сайты норм-->
+			<iframe src="https://academy-of-curiosity.ru/stati/okruzhayushhij-nas-mir/eksperimenty-i-opyty/raduga-dlya-detej-5-sposobov-sdelat-radugu-doma/" width="300px" height="100px%"></iframe><br>
+
+			<bdo dir="rtl">This text will go right to left.</bdo>
+			<br><bdo dir="ltr">This text will go backward.</bdo></p>
+
+			<a class="arrow" href="#">Continue Reading</a>
+
+			<section>
+				<h2>Favorite Foods</h2>
+				<ul>
+					<li>Pineapple juice</li>
+					<li>strawberry gell-o</li>
+					<li>Sneakers chocolate bar</li>
+					<li>Pelmeni</li>
+				</ul>
+			</section>
+			</p>
+						
+			<!--земля и ракета-->
+
+			<div class="container">
+			    <div class="planet"></div>
+			    <div class="rocket"></div>
+			</div>
+
+
+			<!--кравсивый курсивный фон-->
+			<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" />
+
+			<h1 class='font'>This is my pretty webfont!</h1>
+
+			<div class="buttons_change_text">
+			    <span data-title="I have a wonderful title!">This is item</span>
+			    <span data-title="These titles are shown only using CSS, no JavaScript is used!">This is item</span>
+			    <span data-title="Hello there!">This is item</span>
+			    <span data-title="Generated content is awesome!">This is item</span>
+			</div>	<p>
+
+
+			<!--Колонки-->
+
+			<div class="space"></div><p>
+
+			<div class="place_columns">
+			    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque urna nec eros ornare, ac tristique diam porta. Donec fermentum velit eget dignissim condimentum. Sed rutrum libero sit amet enim viverra tristique. Mauris ultricies ornare arcu non adipiscing. Sed id ipsum vitae libero facilisis pulvinar id nec lacus. Ut lobortis neque et luctus mattis. Morbi nunc diam, elementum rutrum tellus non, viverra mattis diam. Vestibulum sed arcu tincidunt, auctor ligula ut, feugiat nisi. Phasellus adipiscing eros ut iaculis sagittis. Sed posuere vehicula elit vel tincidunt. Duis feugiat feugiat libero bibendum consectetur. Ut in felis non nisl egestas lacinia. Fusce interdum vitae nunc eget elementum. Quisque dignissim luctus magna et elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed nunc lorem, convallis consequat fermentum eget, aliquet sit amet libero.</p>
+			</div>
+
+			<!---Календарь-->
+
+			 <table class="cal">
+			      <caption>Oct 2020</caption>
+			      <thead>
+       			  <tr>
+                      <th>Sun</th>
+                      <th>Mon</th>
+                      <th>Tue</th>
+                      <th>Wed</th>
+                      <th>Thu</th>
+                      <th>Fri</th>
+                      <th>Sat</th>
+   				 </tr>
+              </thead>
+              <tbody>
+                    <tr>
+	                    <td class="old">27</td>
+	                    <td class="old">28</td>
+	                    <td class="old">29</td>
+	                    <td class="old">30</td>
+	                    <td>1</td>
+						<td>2*<span>Lunch with Mom</span></td>
+	 				    <td>3</td>
+            		</tr>
+                    <tr>
+     					  <td>4</td>
+                          <td>5</td>
+                          <td>6*<span>Meet With Dean</span></td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                    </tr>
+                    <tr>
+                          <td>11</td>
+                          <td>12</td>
+                          <td>13*<span>Library Helper!</span></td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                    </tr>
+                    <tr>
+                          <td>18</td>
+                          <td>19</td>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                  </tr>
+                  <tr>
+                        <td>25</td>
+                          <td>26</td>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td class="holiday">31<span>BOO!<br/> Halloween</span></td>
+                   </tr>    
+              </tbody>
+        </table>
+
+       <div id="vertical_navigation">
+
+       		<p>
+	        <nav>
+	        	
+		      <a href="">Home</a>
+		      <a href="">Photos</a>
+		      <a href="">Recipes</a>
+		      <a href="">Contact</a>
+		    </nav>
+		    <section>
+		      <h2>Playing with Vertical Navigation Bars</h2>
+		      
+		      <p>This is a separate section that will hold the content for each page.  The next paragraph is just filler text. It doesn't mean anything.</p>
+		      
+		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, temporibus, culpa! Impedit amet voluptates reiciendis esse quisquam. Eum quia, facere laboriosam quos possimus, ratione, optio incidunt sunt dolorum commodi magni.</p>
+		    </section>
+	    </div>
+
+	    <div id= "horizontal_navigation">
+	    	<p></p>
+	        <nav>
+		      <a href="">Home</a>
+		      <a href="">Photos</a>
+		      <a href="">Recipes</a>
+		      <a href="">Contact</a>
+		    </nav>
+		    <section>
+		      <h2>Playing with Horizpntal Navigation Bars</h2>
+		      
+		      <p>This is a separate section that will hold the content for each page.  The next paragraph is just filler text. It doesn't mean anything.</p>
+		      
+		      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, temporibus, culpa! Impedit amet voluptates reiciendis esse quisquam. Eum quia, facere laboriosam quos possimus, ratione, optio incidunt sunt dolorum commodi magni.</p>
+		    </section>
+	    </div>
+
+
+
+	    <div id="drop_down_navigation">
+	    <p>	</p>
+	    	<nav>
+		      <ul>
+		        <li><a href="#">Home</a></li>
+		        <li><a href="#">Pictures</a>
+		          <ul>
+		            <li><a href="#">2015</a></li>
+		            <li><a href="#">2014</a></li>
+		            <li><a href="#">2013</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="#" class="active">Recipes</a>
+		          <ul>
+		            <li><a href="#">Appetizers</a></li>
+		            <li><a href="#">Main</a></li>
+		            <li><a href="#">Desserts</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="#">Contact</a></li>
+		      </ul>
+		    </nav>
+		  <section>
+				<h2>Playing with Drop Down Navigation Menu Bars</h2>
+				<p>This is a separate section that will hold the content for each page.  The next paragraph is just filler text. It doesn't mean anything.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, temporibus, culpa! Impedit amet voluptates reiciendis esse quisquam. Eum quia, facere laboriosam quos possimus, ratione, optio incidunt sunt dolorum commodi magni.</p>
+			</section>
+		</div>	
+
+
+
+
+
+		</main>	
+
+		<!-- содержит инфу внизу страницы -->
+		<footer>
+			<p> текст через параграф</p>
+			&copy; 2020 by me<br>
+			<a href="https://vk.com/simonakhatipova">My VK page</a>
+		</footer>
+
+
+
+			
+
+	</body>
+
+
+</html>
