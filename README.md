@@ -1,4 +1,4 @@
-#Files created in the Michigan univercity course/ Learning materials
+# Files created in the Michigan univercity course/ Studying materials
 
 ## Welcome to GitHub Pages
 
